@@ -1,7 +1,7 @@
-import { userState } from "react"
+import { useState } from "react"
 
 const CartItemCounter = ({ initialQueantity, stock, onQuantityChange }) => {
-    const [quantity, setQuantity] = userState(initialQueantity);
+    const [quantity, setQuantity] = useState(initialQueantity);
 
     const handleIncrease = () => {
         if (quantity < stock) {

@@ -1,7 +1,14 @@
 .cart-widget {
   position: relative;
+  cursor: pointer;
 
-  &__cart {
-    font-size: $large;
+  &__icon-container {
+    position: relative;
+    display: inline-block;
   }
+
+  &__icon {
+    font-size: 24px; // Ajusta esto según el tamaño que desees
+  }
+
 }

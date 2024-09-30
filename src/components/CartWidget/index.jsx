@@ -1,22 +1,40 @@
-// import { Icon } from '@iconify/react';
-// import Pill from '../Pill';
-// import { useContext } from "react";
-// import { CartContext } from "../../context/cartContext";
-// import { Link } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
-
-import { Link } from 'react-router-dom';
+import Pill from '../Pill';
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
+import { useNavigate } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
 const CartWidget = () => {
+  const { cartItems } = useContext(CartContext);
+  const navigate = useNavigate();
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  console.log('CartWidget - Total quantity:', totalQuantity);
+  console.log('CartWidget - Cart items:', cartItems);
+
+  const handleClick = () => {
+    navigate('/cart');
+  };
+
   return (
-    <Link to="/cart" className="cart-widget">
-      <Icon icon="mdi:cart-outline" />
-    </Link>
+    <div className="cart-widget" onClick={handleClick}>
+      <div className="cart-widget__icon-container">
+        <Icon className="cart-widget__icon" icon="fa-solid:wine-glass-alt" />
+        {totalQuantity > 0 && <Pill className="cart-widget__pill" quantity={totalQuantity} />}
+      </div>
+    </div>
   );
 };
 
 export default CartWidget;
+
+
+
+// import Pill from '../Pill';
+// import { useContext } from "react";
+// import { CartContext } from "../../context/cartContext";
+// import { Link } from 'react-router-dom';
+// import { Icon } from '@iconify/react';
 
 
 // const CartWidget = () => {

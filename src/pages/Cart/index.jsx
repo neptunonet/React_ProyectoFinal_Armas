@@ -1,22 +1,22 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../../context/cartContext";
 import CartItemCount from "../../components/CartItemCount";
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const { cartItems, removeItem, clearCart, updateItemQuantity} = useContext(CartContext)
+    const { cartItems, removeItem, clearCart, updateItemQuantity} = useContext(CartContext);
 
-    console.log('Cart - Items en el carrito:', cartItems);
+    useEffect(() => {
+        console.log('Cart - Items en el carrito:', cartItems);
+    }, [cartItems]);
 
     const total = cartItems.reduce((acc, item) => acc + item.sale_price * item.quantity, 0);
 
     const handleQuantityChange = (item, newQuantity) => {
-        
         if (newQuantity > 0) {
             updateItemQuantity(item.id, newQuantity);
         }
     };
-
     return (
         <section className="cart">
             <h1>Carrito de Compras</h1>
