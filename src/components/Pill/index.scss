@@ -1,0 +1,29 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.6rem;
+  background-color: #ff4500; // Un color naranja-rojo, puedes cambiarlo
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 9999px; // Esto crea el efecto "pill"
+  min-width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  // Si quieres que el pill sea más pequeño cuando solo hay un dígito
+  &[data-digits="1"] {
+    min-width: 1.2rem;
+    height: 1.2rem;
+    font-size: 0.65rem;
+  }
+}
