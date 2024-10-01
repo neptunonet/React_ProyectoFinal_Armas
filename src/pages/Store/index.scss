@@ -3,13 +3,13 @@
   padding: 20px;
   
   &__aside {
-    width: 150px; // Reducido de 200px a 150px
-    margin-right: 15px; // Reducido de 20px a 15px
-    font-size: 0.9rem; // Añadido para reducir el tamaño de la fuente
+    width: 150px;
+    margin-right: 15px;
+    font-size: 0.9rem;
 
     h3 {
-      margin-bottom: 8px; // Reducido de 10px a 8px
-      font-size: 1rem; // Añadido para reducir el tamaño del título
+      margin-bottom: 8px;
+      font-size: 1rem;
     }
 
     ul {
@@ -17,7 +17,7 @@
       padding: 0;
 
       li {
-        margin-bottom: 3px; // Reducido de 5px a 3px
+        margin-bottom: 3px;
 
         a {
           text-decoration: none;
@@ -34,15 +34,51 @@
     flex: 1;
 
     h2 {
-      margin-bottom: 15px; // Reducido de 20px a 15px
-      font-size: 1.5rem; // Añadido para reducir el tamaño del título
+      margin-bottom: 15px;
+      font-size: 1.5rem;
     }
   }
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); // Reducido de 200px a 180px
-    gap: 15px; // Reducido de 20px a 15px
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+    gap: 10px; 
+  }
+}
+
+
+.item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  &__image {
+    width: 100%;
+    height: 120px; // Reducido de 150px a 120px
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    font-size: 0.9rem; // Reducido de 1rem a 0.9rem
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  &__price {
+    font-size: 0.8rem; // Reducido de 0.9rem a 0.8rem
+    color: #007bff;
   }
 }
 
@@ -64,94 +100,9 @@
         }
       }
     }
+
+    &__items {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); // Reducido aún más para móviles
+    }
   }
 }
-
-// .store {
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   padding: 20px;
-
-//   &__title {
-//     font-size: 2.5rem;
-//     text-align: center;
-//     margin-bottom: 30px;
-//     color: $primary-color;
-//   }
-
-//   &__filters {
-//     display: flex;
-//     justify-content: center;
-//     margin-bottom: 30px;
-
-//     button {
-//       padding: 10px 20px;
-//       margin: 0 10px;
-//       background-color: $secondary-color;
-//       color: white;
-//       border: none;
-//       border-radius: 5px;
-//       cursor: pointer;
-//       transition: background-color 0.3s ease;
-
-//       &:hover {
-//         background-color: darken($secondary-color, 10%);
-//       }
-
-//       &.active {
-//         background-color: $primary-color;
-//       }
-//     }
-//   }
-
-//   &__grid {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-//     gap: 30px;
-//   }
-
-//   &__item {
-//     background-color: white;
-//     border-radius: 8px;
-//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//     overflow: hidden;
-//     transition: transform 0.3s ease;
-
-//     &:hover {
-//       transform: translateY(-5px);
-//     }
-
-//     img {
-//       width: 100%;
-//       height: 200px;
-//       object-fit: cover;
-//     }
-
-//     &-content {
-//       padding: 15px;
-
-//       h3 {
-//         font-size: 1.2rem;
-//         margin-bottom: 10px;
-//       }
-
-//       p {
-//         color: $text-color;
-//         margin-bottom: 15px;
-//       }
-
-//       .price {
-//         font-weight: bold;
-//         color: $primary-color;
-//       }
-//     }
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .store {
-//     &__grid {
-//       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-//     }
-//   }
-// }

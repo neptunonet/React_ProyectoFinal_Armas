@@ -22,30 +22,6 @@ const ItemDetail = ({ id, wine_name, img, sale_price, vineyard, category }) => {
       console.log('No se puede agregar cantidad 0 al carrito');
     }
   }
-// import { useContext, useState } from "react";
-// import { CartContext } from "../../context/cartContext";
-
-// const ItemDetail = ({ id, wine_name, img, sale_price, vineyard, category }) => {
-//   const [quantity, setQuantity] = useState(0);
-//   const { addToCart } = useContext(CartContext);
-
-//   const increase = () => {
-//     setQuantity(prevQuantity => prevQuantity + 1);
-//   }
-
-//   const decrease = () => {
-//     setQuantity(prevQuantity => prevQuantity > 0 ? prevQuantity - 1 : 0);
-//   }
-
-//   const handleAddToCart = () => {
-//     if (quantity > 0) {
-//       console.log('Añadiendo al carrito:', { id, wine_name, img, sale_price, vineyard, category }, quantity);
-//       addToCart({ id, wine_name, img, sale_price, vineyard, category }, quantity);
-//     } else {
-//       console.log('No se puede agregar cantidad 0 al carrito');
-//     }
-//   }
-
   return (
     <section className="item-detail">
       <picture className="item-detail__picture">
