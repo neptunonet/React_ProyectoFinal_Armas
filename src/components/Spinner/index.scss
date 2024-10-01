@@ -1,19 +1,33 @@
+$spinner-size: 48px;
+$spinner-border-width: 5px;
+$spinner-color: $primary;
+$spinner-background: $white;
+$spinner-animation-duration: 1s;
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
 .loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #FFF;
-  border-bottom-color: #FF3D00;
+  width: $spinner-size;
+  height: $spinner-size;
+  border: $spinner-border-width solid $spinner-background;
+  border-bottom-color: $spinner-color;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+  animation: rotation $spinner-animation-duration linear infinite;
 }
 
 @keyframes rotation {
-  0% {
-      transform: rotate(0deg);
+  from {
+    transform: rotate(0deg);
   }
-  100% {
-      transform: rotate(360deg);
+  to {
+    transform: rotate(360deg);
   }
 }

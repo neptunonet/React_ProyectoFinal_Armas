@@ -9,11 +9,11 @@ const Footer = () => {
     },
     {
       label: 'Tienda',
-      href: '/store'
+      href: '/tienda'
     },
     {
       label: 'Contacto',
-      href: '/contact'
+      href: '/contacto'
     },
   ];
 
