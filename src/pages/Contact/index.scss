@@ -1,0 +1,71 @@
+.contact-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  h1 {
+    font-size: $large;
+    color: $primary;
+    margin-bottom: 20px;
+    font-family: $raleway;
+  }
+
+  p {
+    font-size: $small;
+    color: $secondary;
+    margin-bottom: 30px;
+    font-family: $inter;
+  }
+
+  .contact-form {
+    background-color: $light;
+    padding: 30px;
+    border-radius: 8px;
+
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-family: $raleway;
+        color: $primary;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $lighter;
+        border-radius: 4px;
+        font-family: $inter;
+        font-size: $xsmall;
+
+        &:focus {
+          outline: none;
+          border-color: $primary;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+      }
+    }
+
+    .submit-btn {
+      background-color: $primary;
+      color: $white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: $raleway;
+      font-size: $small;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary, 10%);
+      }
+    }
+  }
+}

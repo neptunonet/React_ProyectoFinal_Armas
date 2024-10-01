@@ -1,7 +1,7 @@
-import Menu from "../../components/Menu";
+import { Link } from 'react-router-dom';
+import { Icon } from '@iconify/react';
 
 const Footer = () => {
-
   const links = [
     {
       label: 'Home',
@@ -17,14 +17,74 @@ const Footer = () => {
     },
   ];
 
-  return(
-      <footer>
-        <section className="container">
+  const socialLinks = [
+    { icon: 'mdi:facebook', url: 'https://facebook.com' },
+    { icon: 'mdi:instagram', url: 'https://instagram.com' },
+    { icon: 'mdi:twitter', url: 'https://twitter.com' },
+  ];
 
-         </section>
-        <p className="copy">All rights reserved &copy;</p>
+  return (
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-content">
+          <div className="footer-logo">
+            <Link to="/">
+              <img src="/img/branding/logo.webp" alt="Viñedos del Valle Logo" />
+            </Link>
+          </div>
+          <nav className="footer-nav">
+            <ul>
+              {links.map((link, index) => (
+                <li key={index}>
+                  <Link to={link.href}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="social-links">
+            {socialLinks.map((social, index) => (
+              <a key={index} href={social.url} target="_blank" rel="noopener noreferrer">
+                <Icon icon={social.icon} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p className="copy">&copy; {new Date().getFullYear()} Viñedos del Valle. Todos los derechos reservados.</p>
+      </div>
     </footer>
   );
 };
 
 export default Footer;
+// import Menu from "../../components/Menu";
+
+// const Footer = () => {
+
+//   const links = [
+//     {
+//       label: 'Home',
+//       href: '/'
+//     },
+//     {
+//       label: 'Tienda',
+//       href: '/store'
+//     },
+//     {
+//       label: 'Contacto',
+//       href: '/contact'
+//     },
+//   ];
+
+//   return(
+//       <footer>
+//         <section className="container">
+
+//          </section>
+//         <p className="copy">All rights reserved &copy;</p>
+//     </footer>
+//   );
+// };
+
+// export default Footer;
