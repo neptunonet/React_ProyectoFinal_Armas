@@ -1,58 +1,22 @@
-import Pill from '../Pill';
-import { useContext } from "react";
-import { CartContext } from "../../context/cartContext";
-import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/cartContext';
 import { Icon } from '@iconify/react';
+import Pill from '../Pill';
 
 const CartWidget = () => {
-  const { cartItems } = useContext(CartContext);
-  const navigate = useNavigate();
-  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const { cartItems } = useContext(CartContext);
 
-  console.log('CartWidget - Total quantity:', totalQuantity);
-  console.log('CartWidget - Cart items:', cartItems);
+    const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
-  const handleClick = () => {
-    navigate('/cart');
-  };
-
-  return (
-    <div className="cart-widget" onClick={handleClick}>
-      <div className="cart-widget__icon-container">
-        <Icon className="cart-widget__icon" icon="fa-solid:wine-glass-alt" />
-        {totalQuantity > 0 && <Pill className="cart-widget__pill" quantity={totalQuantity} />}
-      </div>
-    </div>
-  );
+    return (
+        <Link to="/cart" className="cart-widget">
+            <Icon className="cart-widget__icon" icon="fa-solid:wine-glass-alt"/>
+            {/* {itemCount > 0 && <span className="cart-notification">{itemCount}</span>} */}
+            {itemCount > 0 && <Pill className="cart-widget__pill" quantity={itemCount} />}
+        </Link>
+    );
 };
 
 export default CartWidget;
 
-
-
-// import Pill from '../Pill';
-// import { useContext } from "react";
-// import { CartContext } from "../../context/cartContext";
-// import { Link } from 'react-router-dom';
-// import { Icon } from '@iconify/react';
-
-
-// const CartWidget = () => {
-//   const { cartItems } = useContext(CartContext);
-//   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
-
-//   console.log('CartWidget - Total quantity:', totalQuantity);
-
-//   const handleClick = () => {
-//     navigate('/cart');
-//   };
-
-//   return (
-//     <div onClick={handleClick} style={{ cursor: 'pointer' }}>
-//       <Pill quantity={totalQuantity} />
-//       <Icon className='cart-widget__cart' icon="fa-solid:wine-glass-alt" />
-//     </div>
-//   );
-// };
-
-// export default CartWidget;
