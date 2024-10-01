@@ -17,19 +17,6 @@
     align-items: center;
     height: 80px;
 
-    &__brand {
-      font-family: $raleway;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: $primary;
-      text-decoration: none;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: darken($primary-color, 10%);
-      }
-    }
-
     &__links {
       display: flex;
       list-style: none;
@@ -43,6 +30,7 @@
 
     &__link {
       font-family: $inter;
+      font-weight: 500;
       font-size: 1.5rem;
       color: $text-color;
       text-decoration: none;

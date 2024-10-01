@@ -3,7 +3,7 @@ import { doc, writeBatch } from "firebase/firestore";
 
 import { db } from "../../services/firebaseConfig";
 
-import items from "../../data/items.json";
+//import items from "../../data/items.json";
 import Spinner from "../../components/Spinner";
 
 const Update = () => {
