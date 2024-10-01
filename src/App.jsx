@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 import Error404 from './pages/404';
 import Update from './pages/Update';
 import Cart from './pages/Cart';
-import CompraConfirmada from "./pages/CompraConfirmada";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
             <Route path='/contacto' element={<Contact />}/>
             <Route path='/update' element={<Update />}/>
             <Route path='/cart' element={<Cart />}/>
-            <Route path='/compra-confirmada' element={<CompraConfirmada />}/>
+            <Route path='/checkout' element={<Checkout />}/>
             <Route path="*" element={<Error404 />}/>
           </Routes>
         </BaseLayout>

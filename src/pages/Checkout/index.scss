@@ -1,0 +1,40 @@
+.compra-confirmada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 20px;
+    font-family: $raleway;
+
+  h1 {
+    font-size: $xlarge;
+    color: $primary;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  p {
+    font-size: $medium;
+    color: $secondary;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 600px;
+    font-family: $inter;
+  }
+
+  .volver-tienda {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: $primary;
+    color: $white;
+    font-size: $medium;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+  }
+}

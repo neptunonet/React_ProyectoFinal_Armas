@@ -1,95 +1,209 @@
 .item-detail {
-  margin: auto;
-  max-width: 720px;
-  @include flex(row, space-around, center);
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
+  padding: 2rem;
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   &__picture {
-    $self: &;
-    @include flex(row, space-around, center);
+    flex: 1;
+    min-width: 300px;
     position: relative;
-    &--pill {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: $small;
-      font-weight: 600;
-      background-color: $lighter;
-      color: $white;
-      padding: 1rem 2rem;
-    }
+
     &--img {
       width: 100%;
-      height: 100%;
-      object-position: center;
-      object-fit: contain;
-      animation: fade 0.7s;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
     }
+
     &--img--2 {
       display: none;
     }
-    &:hover .item-detail__picture--img--1 {
-      display: none;
-    }
-    &:hover .item-detail__picture--img--2 {
-      animation: fade 0.7s;
-      display: block;
+
+    &:hover {
+      .item-detail__picture--img--1 {
+        display: none;
+      }
+      .item-detail__picture--img--2 {
+        display: block;
+        animation: fade 0.7s;
+      }
     }
   }
 
   &__info {
-    @include flex(column, center, flex-start);
-    gap: 1.5rem;
-    flex-grow: 1;
+    flex: 1;
+    min-width: 300px;
+
     &--licence {
       font-size: $small;
-      color: $secondary;
-      font-weight: 400;
+      color: $gray;
+      margin-bottom: 0.5rem;
     }
+
     &--name {
-      font-size: $jumbo;
+      font-size: $xlarge;
+      font-weight: bold;
+      color: $dark;
+      margin-bottom: 1rem;
     }
+
     &--description {
-      font-size: $large;
-      color: $secondary;
-      font-weight: 400;
-      max-width: 70%;
+      font-size: $medium;
+      color: $gray;
+      margin-bottom: 1rem;
     }
+
     &--price {
-      font-size: $jumbo;
+      font-size: $large;
+      font-weight: bold;
+      color: $primary;
+      margin-bottom: 1.5rem;
     }
   }
 
   &__form {
-    margin-top: 2rem;
-    @include flex(row, flex-start, center);
-    gap: 2rem;
-    &--btn,
-    &--input {
-      padding: 0.4rem;
-      font-size: $large;
-      width: 50px;
-      text-align: center;
+    &--container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
     }
+
     &--btn {
-      background-color: $secondary;
-      color: $white;
-      border: 3px solid $secondary;
-      cursor: pointer;
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-    &--submit {
-      background-color: $primary;
-      color: $white;
-      font-size: large;
-      padding: 1rem 1.5rem;
+      padding: 0.5rem 1rem;
+      font-size: $medium;
+      background-color: $light;
       border: none;
       cursor: pointer;
+
       &:hover {
-        background-color: $lighter;
+        background-color: darken($light, 10%);
+      }
+    }
+
+    &--input {
+      width: 50px;
+      text-align: center;
+      font-size: $medium;
+      margin: 0 1rem;
+      border: 1px solid $light;
+    }
+
+    &--submit {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      font-size: $medium;
+      font-weight: bold;
+      color: $white;
+      background-color: $primary;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary, 10%);
       }
     }
   }
 }
+
+// .item-detail {
+//   margin: auto;
+//   max-width: 720px;
+//   @include flex(row, space-around, center);
+//   gap: 2rem;
+//   &__picture {
+//     $self: &;
+//     @include flex(row, space-around, center);
+//     position: relative;
+//     &--pill {
+//       display: block;
+//       position: absolute;
+//       top: 0;
+//       right: 0;
+//       font-size: $small;
+//       font-weight: 600;
+//       background-color: $lighter;
+//       color: $white;
+//       padding: 1rem 2rem;
+//     }
+//     &--img {
+//       width: 100%;
+//       height: 100%;
+//       object-position: center;
+//       object-fit: contain;
+//       animation: fade 0.7s;
+//     }
+//     &--img--2 {
+//       display: none;
+//     }
+//     &:hover .item-detail__picture--img--1 {
+//       display: none;
+//     }
+//     &:hover .item-detail__picture--img--2 {
+//       animation: fade 0.7s;
+//       display: block;
+//     }
+//   }
+
+//   &__info {
+//     @include flex(column, center, flex-start);
+//     gap: 1.5rem;
+//     flex-grow: 1;
+//     &--licence {
+//       font-size: $small;
+//       color: $secondary;
+//       font-weight: 400;
+//     }
+//     &--name {
+//       font-size: $jumbo;
+//     }
+//     &--description {
+//       font-size: $large;
+//       color: $secondary;
+//       font-weight: 400;
+//       max-width: 70%;
+//     }
+//     &--price {
+//       font-size: $jumbo;
+//     }
+//   }
+
+//   &__form {
+//     margin-top: 2rem;
+//     @include flex(row, flex-start, center);
+//     gap: 2rem;
+//     &--btn,
+//     &--input {
+//       padding: 0.4rem;
+//       font-size: $large;
+//       width: 50px;
+//       text-align: center;
+//     }
+//     &--btn {
+//       background-color: $secondary;
+//       color: $white;
+//       border: 3px solid $secondary;
+//       cursor: pointer;
+//       &:hover {
+//         opacity: 0.7;
+//       }
+//     }
+//     &--submit {
+//       background-color: $primary;
+//       color: $white;
+//       font-size: large;
+//       padding: 1rem 1.5rem;
+//       border: none;
+//       cursor: pointer;
+//       &:hover {
+//         background-color: $lighter;
+//       }
+//     }
+//   }
+// }

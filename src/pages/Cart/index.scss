@@ -9,22 +9,58 @@
   h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: $primary;
+    font-family: $raleway;
+    font-size: $large;
+  }
+
+  &-empty {
+    text-align: center;
+    padding: 40px;
+    background-color: $light;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    p {
+      font-size: $medium;
+      color: $secondary;
+      margin-bottom: 20px;
+      font-family: $inter;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: $primary;
+      color: $white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      font-family: $raleway;
+      font-size: $small;
+
+      &:hover {
+        background-color: darken($primary, 10%);
+      }
+    }
   }
 
   &-item {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid $gray;
+    border-radius: 8px;
     width: 100%;
+    background-color: $white;
 
     &__img {
       width: 100px;
       height: 100px;
       object-fit: cover;
       margin-right: 15px;
+      border-radius: 5px;
     }
 
     &__details {
@@ -32,12 +68,16 @@
 
       h3 {
         margin: 0 0 5px 0;
-        font-size: 18px;
+        font-size: $medium;
+        color: $primary;
+        font-family: $raleway;
       }
 
       p {
         margin: 0 0 10px 0;
-        color: #666;
+        color: $secondary;
+        font-family: $inter;
+        font-size: $small;
       }
     }
 
@@ -48,13 +88,23 @@
 
       button {
         padding: 5px 10px;
-        background-color: #f0f0f0;
+        background-color: $secondary;
+        color: $white;
         border: none;
         cursor: pointer;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
+        font-size: $xsmall;
+
+        &:hover {
+          background-color: darken($secondary, 10%);
+        }
       }
 
       span {
         margin: 0 10px;
+        font-family: $inter;
+        font-size: $small;
       }
     }
   }
@@ -65,9 +115,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: $light;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
     h2 {
       margin-bottom: 15px;
+      color: $primary;
+      font-family: $raleway;
+      font-size: $medium;
     }
 
     &__clearbtn,
@@ -78,16 +135,27 @@
       border-radius: 5px;
       cursor: pointer;
       width: 200px;
+      font-family: $raleway;
+      transition: background-color 0.3s ease;
+      font-size: $small;
     }
 
     &__clearbtn {
-      background-color: #f44336;
-      color: white;
+      background-color: $danger;
+      color: $white;
+
+      &:hover {
+        background-color: darken($danger, 10%);
+      }
     }
 
     &__checkoutbtn {
-      background-color: #4CAF50;
-      color: white;
+      background-color: $success;
+      color: $white;
+
+      &:hover {
+        background-color: darken($success, 10%);
+      }
     }
   }
 }

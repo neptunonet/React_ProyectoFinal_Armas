@@ -12,14 +12,15 @@ const Cart = () => {
     };
 
     const calculateTotal = () => {
-        return cartItems.reduce((total, item) => total + item.sale_price * item.quantity, 0);
+        const total = cartItems.reduce((total, item) => total + item.sale_price * item.quantity, 0);
+        return Number(total.toFixed(2));
     };
 
     return (
         <section className="cart">
             <h1>Carrito de Compras</h1>
             {cartItems.length === 0 ? (
-                <div>
+                <div className="cart-empty">
                     <p>No tiene productos en el carrito</p>
                     <Link to="/tienda">Volver a la tienda</Link>
                 </div>
@@ -43,7 +44,7 @@ const Cart = () => {
                     <div className="cart-summary">
                         <h2>Total de la compra: ${calculateTotal()}</h2>
                         <button className="cart-summary__clearbtn" onClick={clearCart}>Vaciar Carrito</button>
-                        <Link to="/compra-confirmada">
+                        <Link to="/Checkout">
                             <button type="submit" className="cart-summary__checkoutbtn">Confirmar Compra</button>
                         </Link>
                     </div>
