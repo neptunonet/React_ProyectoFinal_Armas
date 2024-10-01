@@ -1,35 +1,79 @@
 .header {
-  background-color: #2b2b2b;
-  color: $white;
-  padding: 40px 0;
-}
+  background-color: $white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-  &__menu {
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
-  }
+    height: 80px;
 
-  &__item {
-    transition: all .3s linear;
-    cursor: pointer;
-    color: $white;
-
-    a {
-      padding: .8rem;
+    &__brand {
+      font-family: $raleway;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primary;
+      text-decoration: none;
+      transition: color 0.3s ease;
 
       &:hover {
-        background-color: $white;
-        color: $black;
-        border-radius: 4px;
+        color: darken($primary-color, 10%);
+      }
+    }
+
+    &__links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-left: 30px;
+      }
+    }
+
+    &__link {
+      font-family: $inter;
+      font-size: 1.5rem;
+      color: $text-color;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
       }
     }
   }
+}
 
+@media (max-width: 768px) {
+  .header {
+    .navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 20px 0;
+
+      &__brand {
+        margin-bottom: 20px;
+      }
+
+      &__links {
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
 }

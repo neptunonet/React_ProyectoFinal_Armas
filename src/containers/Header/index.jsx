@@ -1,9 +1,7 @@
-import logo from '../../assets/logo.webp';
-import Menu from '../../components/Menu';
+import { Link } from 'react-router-dom';
 import CartWidget from '../../components/CartWidget';
 
 const Header = () => {
-
   const links = [
     {
       label: 'Home',
@@ -21,20 +19,21 @@ const Header = () => {
 
   return (
     <header className="header">
-      <nav className="navbar container">
-        <a className="navbar__logo" href="/">
-          <figure className="navbar__img">
-            <img src={logo} alt="" />
-          </figure>
-        </a>
-        <Menu className="navbar" links={links}>
-          <li>
-            <a href="" className='navbar__link-button'>
-              <CartWidget quantity={0} />
-            </a>
-          </li>
-        </Menu>
-      </nav>
+      <div className="container">
+        <nav className="navbar">
+
+          <ul className="navbar__links">
+            {links.map((link, index) => (
+              <li key={index}>
+                <Link to={link.href} className="navbar__link">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <CartWidget quantity={0} />
+        </nav>
+      </div>
     </header>
   );
 };
