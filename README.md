@@ -51,10 +51,14 @@ Este proyecto es una aplicación de comercio electrónico desarrollada con React
     ```
 
 3. Instala las dependencias:
-    ``` npm install 
+    ``` 
+        npm install 
     ```
 
 4. Configura las variables de entorno para Firebase (si es necesario).
+    ``` 
+        npm install firebase
+    ```
 
 5. Inicia el servidor de desarrollo:    
     ```
