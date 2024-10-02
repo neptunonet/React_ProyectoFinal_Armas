@@ -16,7 +16,7 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
 
-//Conexion Firestore con Variables de Entorno para VITE
+// //Conexion Firestore con Variables de Entorno para VITE
 
 // import { initializeApp } from "firebase/app";
 // import { getFirestore } from "firebase/firestore";
