@@ -41,18 +41,25 @@ Este proyecto es una aplicación de comercio electrónico desarrollada con React
 ## Instalación y Configuración
 
 1. Clona el repositorio:
-    `git clone [URL del repositorio]`
+    ```
+        git clone [URL del repositorio]
+    ```
 
 2. Navega al directorio del proyecto:
-    `cd [nombre-del-directorio]`
+    ```
+        cd [nombre-del-directorio]
+    ```
 
 3. Instala las dependencias:
-    `npm install`
+    ``` npm install 
+    ```
 
 4. Configura las variables de entorno para Firebase (si es necesario).
 
 5. Inicia el servidor de desarrollo:    
-    `npm run dev`
+    ```
+        npm run dev
+    ```
 
 ## Uso
 
@@ -82,7 +89,7 @@ La aplicación permite a los usuarios:
 > En el documento de proyecto final encontrarás, de manera detallada, las piezas que conforman el proyecto para su correcta presentación.
 
 ## Estructura del Proyecto
-'''
+```
     proyecto-ecommerce/
     │
     ├── public/
@@ -106,40 +113,5 @@ La aplicación permite a los usuarios:
     ├── package.json
     ├── README.md
     └── vite.config.js
-'''
+```
 
-
-<!-- # Trabajo Final - Juan Ignacio Armas
-
-## React - Comisión 71340
-
-### E-commerce
-
-**Se debe entregar**
-
-- Formato: Link a repositorio de git donde se cumplan los objetivos + GIF/Video mostrando la navegabilidad y los flujos básicos de la aplicación y los que el alumno/a considere importantes a remarcar.
-
-- Consigna: Desarrollarás una app de un e-commerce para poder vender productos de un rubro a elección
-
-- Componentes:
-    1. Navbar
-    2. Catálogo
-    3. Detalle de producto
-    4. CartContext
-    5. CartWidget
-
-- Se debe entregar: 
-    - NavBar
-    - CartWidget
-    - ItemListContainer
-    - ItemList
-    - ItemDetailContainer
-    - ItemDetail
-        - ItemQuantitySelector
-        - Description
-        - AddItemButton
-    - Checkout
-        - Brief (detalle de compra)
-
-> [!IMPORTANT]
-> En el documento de proyecto final encontrarás, de manera detallada, las piezas que conforman el proyecto para su correcta presentación.  -->
